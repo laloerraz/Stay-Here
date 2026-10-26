@@ -17,4 +17,5 @@ jobs:
         run: |
           node --version
           node scripts/validate.cjs
+          node scripts/check-secrets.cjs
           node --test tests/protection.test.cjs

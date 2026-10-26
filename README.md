@@ -37,7 +37,7 @@ Permisos: `storage` para ajustes/estado, `webNavigation` para aperturas y navega
 
 ## Ko-fi
 
-Todas las funciones siguen siendo gratis. Cuando tengas tu cuenta, añade tu URL completa `https://ko-fi.com/tuusuario` en `support-config.js`. El enlace de apoyo está oculto mientras no haya una URL válida. No se cargan widgets ni scripts externos. Vuelve a generar el ZIP después del cambio.
+Todas las funciones siguen siendo gratis. Puedes [apoyar el desarrollo en Ko-fi](https://ko-fi.com/laloerraz) desde el botón del panel o desde Sponsor en GitHub. La página de pago se abre únicamente cuando pulsas el enlace. No se cargan widgets ni scripts externos y la extensión no recibe datos de tu tarjeta.
 
 ## Pruebas
 
@@ -53,7 +53,7 @@ La comprobación opcional `tests/extension-smoke.cjs` requiere Playwright y un n
 powershell -ExecutionPolicy Bypass -File scripts/package.ps1
 ```
 
-Genera `dist/StayHere-1.1.0-chrome.zip` con una lista explícita de archivos de producto; excluye documentación de desarrollo, pruebas y diseños. El manifiesto queda en la raíz del ZIP.
+Genera `dist/StayHere-1.1.1-chrome.zip` con una lista explícita de archivos de producto; excluye documentación de desarrollo, pruebas y diseños. El manifiesto queda en la raíz del ZIP.
 
 ## Publicación y repositorio
 
@@ -67,4 +67,8 @@ Antes de enviar a revisión, sigue [store/PENDIENTES.txt](store/PENDIENTES.txt).
 
 ## Apoyo
 
-El enlace de Ko-fi se añadirá cuando esté disponible. No hay funciones de pago.
+[Apoya Stay Here en Ko-fi](https://ko-fi.com/laloerraz). Los aportes son voluntarios; no hay funciones de pago.
+
+## Privacidad del repositorio
+
+El código y las pruebas no contienen credenciales de pagos. El único dato de Ko-fi integrado es el enlace público del creador. Consulta [docs/REPOSITORIO_Y_PRIVACIDAD.md](docs/REPOSITORIO_Y_PRIVACIDAD.md) para distinguir archivos públicos, datos privados e historial.

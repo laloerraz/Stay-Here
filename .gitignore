@@ -7,3 +7,19 @@ test-results/
 .env
 .env.*
 !.env.example
+
+# Private local data must never enter the repository.
+/private/
+/local/
+/contexto/
+/versiones/
+/entregables/
+.vscode/
+.idea/
+*.key
+*.p12
+*.pfx
+credentials.json
+client_secret*.json
+cookies*.json
+*.har

@@ -1,3 +1,3 @@
 "use strict";
-// Add your own https://ko-fi.com/creator URL after creating the account.
-const StayHereSupport = Object.freeze({ url: "" });
+// Public creator page only. No credentials or payment data belong here.
+const StayHereSupport = Object.freeze({ url: "https://ko-fi.com/laloerraz" });

@@ -60,6 +60,11 @@ if (StayHereSupport.url) {
       byId("support").href = url.href;
       byId("support").hidden = false;
       byId("support-note").hidden = false;
+      byId("support").addEventListener("click", async event => {
+        event.preventDefault();
+        try { await chrome.tabs.create({ url: url.href, active: true }); }
+        catch { feedback("No se pudo abrir Ko-fi. Inténtalo de nuevo.", true); }
+      });
     }
   } catch { /* Leave support hidden until a valid creator URL is configured. */ }
 }

@@ -31,5 +31,8 @@ Código remoto: no se utiliza. Toda la lógica se incluye en el paquete.
 Privacidad
 No se transmiten datos de navegación al desarrollador ni se usa analítica. Sí se procesan localmente direcciones e intenciones de navegación para la función descrita. No confundir ausencia de transmisión con ausencia de manejo de datos. Completa las declaraciones según las definiciones del formulario vigente y la política publicada.
 
+Aportes voluntarios
+Puedes apoyar el desarrollo en https://ko-fi.com/laloerraz . Todas las funciones siguen siendo gratis. Los pagos se gestionan fuera de la extensión por Ko-fi y su procesador.
+
 Campos que debe completar el titular
 Correo/contacto de soporte, identidad del desarrollador y URL pública de privacidad. No se inventaron datos de cuenta ni enlaces de repositorio.

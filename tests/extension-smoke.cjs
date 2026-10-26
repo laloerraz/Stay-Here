@@ -59,7 +59,15 @@ const server = http.createServer((req, res) => {
     // source tab explicitly while keeping all data/messages from the real worker.
     await popup.evaluate(async id => { tabId = id; render(await request({ type: 'getPopup' })); }, tabId);
     await popup.waitForFunction(() => document.getElementById('status').textContent === 'Protección activa');
-    assert.equal(await popup.locator('#support').isVisible(), false);
+    assert.equal(await popup.locator('#support').isVisible(), true);
+    assert.equal(await popup.locator('#support').getAttribute('href'), 'https://ko-fi.com/laloerraz');
+    await context.route('https://ko-fi.com/laloerraz', route => route.fulfill({ contentType: 'text/html', body: '<title>Ko-fi: destino de prueba</title>' }));
+    const [supportPage] = await Promise.all([
+      context.waitForEvent('page'), popup.locator('#support').click()
+    ]);
+    await supportPage.waitForURL('https://ko-fi.com/laloerraz');
+    assert.equal(await supportPage.evaluate(() => window.opener === null), true);
+    await supportPage.close();
     const screenshots = path.join(root, 'store');
     fs.mkdirSync(screenshots, { recursive: true });
     await popup.locator('body').screenshot({ path: path.join(screenshots, 'panel-real.png') });

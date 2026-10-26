@@ -1,4 +1,4 @@
-# Verificación de Stay Here 1.1.0
+# Verificación de Stay Here 1.1.1
 
 Comprobada el 26 de octubre de 2026.
 
@@ -13,6 +13,6 @@ Comprobada el 26 de octubre de 2026.
 - Probar en Google Chrome con y sin uBlock Origin Lite. Edge no sustituye esta comprobación.
 - Probar el popup desde el botón de la barra del navegador, reinicio completo de Chrome, formularios, navegación compleja de acceso/pago, iframes y sitios de uso habitual.
 - Probar incógnito cuando se habilite y los límites del regreso opcional.
-- Ko-fi permanece sin configurar. La prueba verifica que el enlace está oculto; no se ha probado un pago.
+- Ko-fi configurado: la prueba verifica el enlace público, que se abre en otra pestaña y sin acceso a window.opener. La navegación externa se sirve con una respuesta de prueba para no depender de la red; la página pública se comprobó por separado en el navegador. No se realiza ningún pago.
 
 La política por documento requiere recargar para aplicar todos los ajustes. La instalación de scripts es asíncrona y no garantiza ejecutarse antes que todos los scripts del sitio. Los contadores son orientativos y no prueban que una apertura sea publicidad.

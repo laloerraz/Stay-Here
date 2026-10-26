@@ -1,5 +1,12 @@
 # Cambios
 
+## 1.1.1
+
+- Botón de apoyo conectado a la página pública de Ko-fi de laloerraz.
+- Sponsor de GitHub configurado con el mismo creador.
+- Exclusiones y comprobación preventiva para evitar subir credenciales o datos locales.
+- El pago se realiza fuera de la extensión, sin widgets ni nuevas autorizaciones.
+
 ## 1.1.0
 
 - Nueva marca Stay Here e icono de mano abierta sobre un círculo celeste.
