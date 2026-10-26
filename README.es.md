@@ -12,7 +12,9 @@ Mantenido por [laloerraz](https://github.com/laloerraz) · [Licencia MIT](LICENS
 
 [![Imagen oficial de Stay Here](docs/imagenes/stay-here-official-1600x1800.png)](docs/imagenes/stay-here-official-1600x1800.png)
 
-**[Ver el video final de demostración (MP4)](https://github.com/laloerraz/Stay-Here/releases/download/v1.1.5/StayHere-Reddit-1080p-final.mp4)** · [Abrir imagen en alta resolución (1600 × 1800)](docs/imagenes/stay-here-official-1600x1800.png)
+https://github.com/user-attachments/assets/79eada19-e5a2-417b-b804-f5e3cf339711
+
+[Abrir imagen en alta resolución (1600 × 1800)](docs/imagenes/stay-here-official-1600x1800.png)
 
 Vista ilustrativa de la interfaz con datos de ejemplo.
 
@@ -41,8 +43,6 @@ Los archivos **Source code** y **Code → Download ZIP** son el proyecto para de
 Pulsa el botón **Ajustes** (engranaje) para elegir **Español** o **English**. La elección se guarda en este dispositivo; el idioma predeterminado de una instalación nueva es inglés.
 
 Después de cambiar opciones de protección o excepciones, recarga las páginas abiertas para aplicar todos los cambios. El panel incluye un botón para recargar la página actual.
-
-![Panel de Stay Here durante una prueba local](docs/imagenes/panel-es-settings.png)
 
 ## Límites
 

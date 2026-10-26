@@ -12,7 +12,9 @@ Maintained by [laloerraz](https://github.com/laloerraz) · [MIT license](LICENSE
 
 [![Stay Here official preview](docs/imagenes/stay-here-official-1600x1800.png)](docs/imagenes/stay-here-official-1600x1800.png)
 
-**[Watch the final demo video (MP4)](https://github.com/laloerraz/Stay-Here/releases/download/v1.1.5/StayHere-Reddit-1080p-final.mp4)** · [Open full-resolution image (1600 × 1800)](docs/imagenes/stay-here-official-1600x1800.png)
+https://github.com/user-attachments/assets/79eada19-e5a2-417b-b804-f5e3cf339711
+
+[Open full-resolution image (1600 × 1800)](docs/imagenes/stay-here-official-1600x1800.png)
 
 Illustrative interface preview with example data.
 
@@ -41,8 +43,6 @@ Keep the extracted folder in a permanent location: Chrome needs it to load the e
 Open **Settings** (the gear button) to choose **English** or **Español**. Your choice is saved on this device. New installations start in English.
 
 After changing protection options or site exceptions, reload open pages to apply all changes. The panel has a button to reload the current page.
-
-![Stay Here panel during a local test](docs/imagenes/panel-minimal.png)
 
 ## Limits
 
