@@ -59,3 +59,7 @@ node --test tests/protection.test.cjs
 ```
 
 La [guía de desarrollo](docs/DESARROLLO.md) explica la estructura, las comprobaciones y cómo generar el paquete. También puedes consultar los [resultados de pruebas](docs/PRUEBAS.md) y el [historial de cambios](docs/CHANGELOG.md).
+
+## Comunidad
+
+Comparte preguntas e ideas en [Discussions](https://github.com/laloerraz/Stay-Here/discussions) y comunica errores en [Issues](https://github.com/laloerraz/Stay-Here/issues). Para proponer código, consulta la [guía de colaboración](.github/CONTRIBUTING.md). Las propuestas se incorporan solo por decisión del mantenedor.
