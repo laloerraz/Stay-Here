@@ -1,5 +1,12 @@
 # Cambios
 
+## 1.1.4
+
+- Official Ko-fi cup asset and blue styling from its creator kit.
+- Settings gear with English/Spanish language selection, saved locally.
+- English default description and README, Spanish README and localized store descriptions.
+- English and Spanish privacy policies; Ko-fi brand attribution.
+
 ## 1.1.3
 
 - Botón de Ko-fi con símbolo de café de mayor tamaño junto al nombre y al interruptor del panel.

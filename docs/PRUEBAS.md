@@ -1,8 +1,8 @@
-# Verificación de Stay Here 1.1.3
+# Verificación de Stay Here 1.1.4
 
 Comprobada el 26 de octubre de 2026.
 
-- 32 pruebas automatizadas aprobadas con `node --test tests/protection.test.cjs`. Usan el código real con APIs de Chrome simuladas e incluyen falsificación de políticas, inyección por documento, reinicio del worker, pausa/excepciones y cierres de pestañas.
+- 34 pruebas automatizadas aprobadas con `node --test tests/protection.test.cjs`. Usan el código real con APIs de Chrome simuladas e incluyen falsificación de políticas, inyección por documento, reinicio del worker, pausa/excepciones y cierres de pestañas.
 - Archivos JavaScript del producto comprobados con `node --check`.
 - ZIP final extraído y comprobado: `manifest.json`, scripts e iconos directamente en la carpeta de instalación. La prueba de integración se ejecutó sobre esa copia extraída, no sobre el directorio de fuentes.
 - Google Chrome **155.0.8059.85** leyó y empaquetó la copia del ZIP mediante `--pack-extension` (código de salida 0). Esto comprueba que Chrome acepta el manifiesto y empaquetado; no equivale a una instalación en el perfil personal.
@@ -18,3 +18,5 @@ Comprobada el 26 de octubre de 2026.
 - Ko-fi configurado: la prueba verifica el enlace público, que se abre en otra pestaña y sin acceso a window.opener. La navegación externa se sirve con una respuesta de prueba para no depender de la red; la página pública se comprobó por separado en el navegador. No se realiza ningún pago.
 
 La política por documento requiere recargar para aplicar todos los ajustes. La instalación de scripts es asíncrona y no garantiza ejecutarse antes que todos los scripts del sitio. Los contadores son orientativos y no prueban que una apertura sea publicidad.
+
+La versión 1.1.4 se comprobó con inglés por defecto, cambio a español y persistencia al volver a abrir el panel, además de las pruebas de aperturas y del enlace de Ko-fi. El símbolo de Ko-fi se sirve desde un archivo local del paquete y corresponde al recurso oficial, sin scripts externos.

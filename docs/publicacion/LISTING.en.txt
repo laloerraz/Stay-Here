@@ -1,0 +1,33 @@
+Stay Here — Chrome Web Store listing
+
+Name: Stay Here
+Short description: Helps stop unwanted pop-up windows and tabs, with global controls and per-site exceptions.
+Languages: English and Spanish. Open the gear button in the panel to choose a language; the choice is saved locally.
+
+Long description
+Stay Here helps keep you in your tab when a site tries to open unwanted popup windows or tabs.
+
+- Helps stop scripted openings and closes detected popup tabs.
+- Global protection switch and exact-domain exceptions.
+- Option to allow links you deliberately click.
+- Session counters for each tab.
+- Optional return after certain automatic cross-domain redirects, off by default.
+- Free features, local processing and no analytics or servers of our own.
+
+Blocking is aggressive and may affect legitimate windows. Allow the site and reload if needed. Use Ctrl + click (Cmd on Mac), the middle mouse button or the context menu to open a link deliberately.
+
+The optional return cannot prevent every redirect and may reload forms or playback. Stay Here does not run on internal browser pages or Chrome Web Store, and does not guarantee blocking every opening. It can be used alongside uBlock Origin Lite, which is not included or required.
+
+Optional support: https://ko-fi.com/laloerraz . Every feature remains free. Payments take place on Ko-fi, outside the extension; no card details are handled by Stay Here.
+
+Single purpose
+Help users control unwanted popup windows and tabs while browsing, with global controls, per-site exceptions and an optional return after certain redirects.
+
+Permission explanations
+storage: local preferences, including interface language, and temporary session state.
+webNavigation: identify source tabs, created destinations and navigations for popup closure or optional return.
+scripting: install script protection in the exact document with private options supplied by the extension.
+HTTP/HTTPS host access: detect links and apply protection to supported pages and frames, following the user's exceptions.
+Remote code: none. All logic is bundled in the extension.
+
+Before submission the owner must provide a public privacy-policy URL and current developer/support information.

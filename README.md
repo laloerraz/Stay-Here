@@ -1,65 +1,71 @@
 # Stay Here
 
-<p align="center"><img src="docs/imagenes/stay-here-logo.png" width="144" alt="Stay Here: mano abierta sobre un círculo celeste"></p>
+**English** · [Español](README.es.md)
 
-Extensión gratuita para Chrome que ayuda a frenar ventanas y pestañas emergentes, con controles sencillos y excepciones por sitio. Puede utilizarse junto a uBlock Origin Lite.
+<p align="center"><img src="docs/imagenes/stay-here-logo.png" width="144" alt="Stay Here: an open stop hand on a light blue circle"></p>
 
-Mantenido por [laloerraz](https://github.com/laloerraz) · [Licencia MIT](LICENSE)
+A free Chrome extension that helps stop unwanted popup windows and tabs, with simple controls and per-site exceptions. It can be used alongside uBlock Origin Lite.
 
-## Instalar en Chrome
+Maintained by [laloerraz](https://github.com/laloerraz) · [MIT license](LICENSE)
 
-La publicación en Chrome Web Store está pendiente.
+## Install in Chrome
 
-1. Descarga **[StayHere-1.1.3.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.3.zip)**.
-2. Haz clic derecho en el ZIP y elige **Extraer todo**.
-3. Abre la carpeta extraída. Debes ver **`manifest.json` directamente dentro de ella**, junto a `background.js` y `popup.html`.
-4. Abre `chrome://extensions`, activa **Modo de desarrollador** y pulsa **Cargar descomprimida**.
-5. Selecciona esa carpeta y recarga las páginas que ya estaban abiertas.
+Chrome Web Store publication is pending.
 
-Conserva la carpeta extraída en una ubicación permanente. Chrome la necesita para cargar la extensión.
+1. Download **[StayHere-1.1.4.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.4.zip)**.
+2. Right-click the ZIP and choose **Extract all**.
+3. Open the extracted folder. **`manifest.json` must be directly inside it**, alongside `background.js` and `popup.html`.
+4. Open `chrome://extensions`, enable **Developer mode** and click **Load unpacked**.
+5. Select that folder and reload any pages that were already open.
 
-Los archivos **Source code** y **Code → Download ZIP** son el proyecto para desarrollo. Si usas uno de ellos, la carpeta que debes seleccionar es `extension`, dentro del proyecto extraído. Si Chrome indica que falta el manifiesto, abre la carpeta elegida y comprueba que `manifest.json` esté a la vista, sin entrar a otra subcarpeta.
+Keep the extracted folder in a permanent location: Chrome needs it to load the extension.
 
-## Uso
+**Source code** archives and **Code → Download ZIP** contain the development project. If you use one, select the `extension` folder inside the extracted project. If Chrome reports a missing manifest, check that the selected folder contains `manifest.json` directly, without opening another subfolder.
 
-- **Protección global:** activa o pausa la protección desde el interruptor del panel.
-- **Permitir este sitio:** añade una excepción para el dominio actual. Los subdominios se gestionan por separado.
-- **Permitir enlaces a otra pestaña:** deja abrir los enlaces que pulses, manteniendo el bloqueo de aperturas por scripts.
-- **Abrir un enlace deliberadamente:** usa Ctrl + clic —Cmd + clic en Mac—, botón central o el menú contextual.
-- **Volver tras una redirección automática:** opción desactivada inicialmente que intenta regresar ante ciertas redirecciones entre dominios.
+## Use
 
-Después de cambiar opciones o excepciones, recarga las páginas abiertas para aplicar todos los cambios. El panel incluye un botón para recargar la página actual.
+- **Global protection:** turn protection on or off with the switch in the panel.
+- **Allow this site:** add an exception for the current domain. Subdomains are handled separately.
+- **Allow clicked links to open new tabs:** allow links you click while keeping scripted openings blocked.
+- **Open a link deliberately:** use Ctrl + click (Cmd on Mac), the middle mouse button or the right-click menu.
+- **Return after an automatic redirect:** an option, off by default, that tries to return after certain cross-domain redirects.
 
-![Panel de Stay Here durante una prueba local](docs/imagenes/panel-real.png)
+Open **Settings** (the gear button) to choose **English** or **Español**. Your choice is saved on this device. New installations start in English.
 
-## Límites
+After changing protection options or site exceptions, reload open pages to apply all changes. The panel has a button to reload the current page.
 
-El bloqueo puede afectar ventanas legítimas de acceso, pago o reproducción. Si ocurre, permite el sitio y recarga. Una pestaña emergente puede aparecer brevemente antes de cerrarse.
+![Stay Here panel during a local test](docs/imagenes/panel-real.png)
 
-Stay Here no elimina todos los anuncios ni garantiza detener toda apertura o redirección. El regreso opcional puede recargar formularios o reproducción y afectar inicios de sesión. Los contadores son orientativos.
+## Limits
 
-No funciona en páginas internas del navegador ni en Chrome Web Store. Para usarla en incógnito debes habilitarla expresamente. Si la desinstalas, recarga las páginas abiertas para retirar la protección ya instalada.
+Blocking can affect legitimate sign-in, payment or playback windows. If that happens, allow the site and reload it. A popup tab may appear briefly before it is closed.
 
-## Privacidad
+Stay Here does not remove every advertisement or guarantee that every opening or redirect will be stopped. The optional return can reload forms or playback and affect sign-ins. Counters are approximate.
 
-La protección funciona en tu navegador, sin servidores propios, analítica ni anuncios. Las preferencias se guardan localmente; las direcciones y los estados temporales de pestañas se procesan durante la sesión y no se envían al desarrollador.
+It does not run on internal browser pages or Chrome Web Store. Incognito use must be enabled explicitly. If you uninstall the extension, reload open pages to remove protection already installed in them.
 
-Consulta la [política de privacidad y explicación de permisos](docs/privacy.html).
+## Privacy
 
-## Apoya el desarrollo
+Protection runs in your browser, without servers of our own, analytics or advertising. Preferences are saved locally. Tab addresses and temporary state are processed during the session and are not sent to the developer.
 
-Todas las funciones son gratuitas. Puedes [apoyar Stay Here en Ko-fi](https://ko-fi.com/laloerraz) desde el panel de la extensión o desde **Sponsor** en GitHub. El aporte es voluntario y el pago se realiza en Ko-fi; la extensión no recibe datos de tu tarjeta.
+Read the [privacy policy and permission explanations](docs/privacy.en.html), also [available in Spanish](docs/privacy.html).
 
-## Pruebas y desarrollo
+## Support development
 
-Desde la raíz del repositorio:
+Every feature is free. You can [support Stay Here on Ko-fi](https://ko-fi.com/laloerraz) from the extension panel or **Sponsor** on GitHub. Support is optional; payment takes place on Ko-fi and the extension does not receive your card details.
+
+The Ko-fi symbol is a third-party mark; see the [brand notices](extension/THIRD_PARTY_NOTICES.txt).
+
+## Tests and development
+
+From the repository root:
 
 ```sh
 node --test tests/protection.test.cjs
 ```
 
-La [guía de desarrollo](docs/DESARROLLO.md) explica la estructura, las comprobaciones y cómo generar el paquete. También puedes consultar los [resultados de pruebas](docs/PRUEBAS.md) y el [historial de cambios](docs/CHANGELOG.md).
+The [development guide (Spanish)](docs/DESARROLLO.md) explains the structure, checks and packaging. See also the [test results (Spanish)](docs/PRUEBAS.md) and [changelog (Spanish)](docs/CHANGELOG.md).
 
-## Comunidad
+## Community
 
-Comparte preguntas e ideas en [Discussions](https://github.com/laloerraz/Stay-Here/discussions) y comunica errores en [Issues](https://github.com/laloerraz/Stay-Here/issues). Para proponer código, consulta la [guía de colaboración](.github/CONTRIBUTING.md). Las propuestas se incorporan solo por decisión del mantenedor.
+Share questions and ideas in [Discussions](https://github.com/laloerraz/Stay-Here/discussions), and report bugs in [Issues](https://github.com/laloerraz/Stay-Here/issues). For code proposals, see the [contribution guide (Spanish)](.github/CONTRIBUTING.md). The maintainer decides which proposals are incorporated.

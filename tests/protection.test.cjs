@@ -215,3 +215,23 @@ test('an extension panel opened as a tab can still read its selected source stat
   });
   assert.equal(response.hostname, 'video.example');
 });
+
+
+test('panel language defaults to English, persists Spanish and rejects unsupported values', async () => {
+  const h = worker({ local: { settings: { enabled: false, allowedHosts: ['safe.example'] } } });
+  assert.equal((await h.popup()).settings.language, 'en');
+  const spanish = await h.message({ type: 'setOptions', tabId: 1, language: 'es' });
+  assert.equal(spanish.settings.language, 'es');
+  assert.equal(spanish.settings.enabled, false);
+  assert.deepEqual(Array.from(spanish.settings.allowedHosts), ['safe.example']);
+  const restarted = worker({ local: h.local, session: h.session });
+  assert.equal((await restarted.popup()).settings.language, 'es');
+  const rejected = await restarted.message({ type: 'setOptions', tabId: 1, language: 'fr' });
+  assert.equal(rejected.settings.language, 'es');
+});
+
+test('a content script cannot change the saved panel language', async () => {
+  const h = worker();
+  await h.content({ type: 'setOptions', tabId: 1, language: 'es' });
+  assert.equal((await h.popup()).settings.language, 'en');
+});

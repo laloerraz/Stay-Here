@@ -2,6 +2,7 @@
 (() => {
   "use strict";
   const defaults = Object.freeze({
+    language: "en",
     enabled: true,
     allowClickedLinks: false,
     strictRedirects: false,
@@ -15,6 +16,7 @@
   }
   function normalizeSettings(value = {}) {
     return {
+      language: value.language === "es" ? "es" : "en",
       enabled: typeof value.enabled === "boolean" ? value.enabled : defaults.enabled,
       allowClickedLinks: typeof value.allowClickedLinks === "boolean" ? value.allowClickedLinks : defaults.allowClickedLinks,
       strictRedirects: typeof value.strictRedirects === "boolean" ? value.strictRedirects : defaults.strictRedirects,

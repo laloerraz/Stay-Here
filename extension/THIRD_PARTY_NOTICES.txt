@@ -1,0 +1,6 @@
+Third-party brand assets
+
+The Ko-fi cup symbol in icons/kofi-symbol.png is an official Ko-fi brand asset. Ko-fi names, logos and marks belong to their respective owner; they are used to identify the link to the creator's Ko-fi page. They are not relicensed under Stay Here's MIT license and their use does not imply endorsement by Ko-fi.
+Official brand guidance and source: https://more.ko-fi.com/brand-assets
+Original asset supplied by that page: https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01229bf8a18f97a3c1_favion.avif
+The bundled file was converted to PNG and resized without changing the design.

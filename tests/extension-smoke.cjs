@@ -60,7 +60,20 @@ const server = http.createServer((req, res) => {
     // A standalone extension tab has no action-popup association. Select the real
     // source tab explicitly while keeping all data/messages from the real worker.
     await popup.evaluate(async id => { tabId = id; render(await request({ type: 'getPopup' })); }, tabId);
+    await popup.waitForFunction(() => document.getElementById('status').textContent === 'Protection active');
+    await popup.locator('#settings-toggle').click();
+    await popup.locator('#language').selectOption('es');
     await popup.waitForFunction(() => document.getElementById('status').textContent === 'Protección activa');
+    const spanishShots = process.env.STAYHERE_SCREENSHOTS || path.join(projectRoot, 'docs', 'imagenes');
+    fs.mkdirSync(spanishShots, { recursive: true });
+    await popup.locator('body').screenshot({ path: path.join(spanishShots, 'panel-es-settings.png') });
+    await popup.reload();
+    await popup.evaluate(async id => { tabId = id; render(await request({ type: 'getPopup' })); }, tabId);
+    await popup.waitForFunction(() => document.documentElement.lang === 'es' && document.getElementById('status').textContent === 'Protección activa');
+    await popup.locator('#settings-toggle').click();
+    await popup.locator('#language').selectOption('en');
+    await popup.waitForFunction(() => document.documentElement.lang === 'en' && document.getElementById('status').textContent === 'Protection active');
+    await popup.locator('#settings-toggle').click();
     assert.equal(await popup.locator('#support').isVisible(), true);
     assert.equal(await popup.locator('#support').getAttribute('href'), 'https://ko-fi.com/laloerraz');
     await context.route('https://ko-fi.com/laloerraz', route => route.fulfill({ contentType: 'text/html', body: '<title>Ko-fi: destino de prueba</title>' }));
@@ -81,7 +94,7 @@ const server = http.createServer((req, res) => {
     const allowed = await page.evaluate(() => { const w = window.open('/destination'); const ok = Boolean(w); w?.close(); return ok; });
     assert.equal(allowed, true);
     assert.deepEqual(errors, []);
-    console.log(JSON.stringify({ browser: context.browser()?.version(), extensionId, extensionRoot: root, version: JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8')).version, result: 'PASS', scenarios: ['install','forged policy','script popup','normal target blank','Ctrl click','real panel','host exception after reload'], screenshots }, null, 2));
+    console.log(JSON.stringify({ browser: context.browser()?.version(), extensionId, extensionRoot: root, version: JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8')).version, result: 'PASS', scenarios: ['install','forged policy','script popup','normal target blank','Ctrl click','real panel','language switching and persistence','host exception after reload'], screenshots }, null, 2));
   } finally {
     await context?.close();
     server.close();

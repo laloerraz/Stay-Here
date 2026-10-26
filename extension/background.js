@@ -1,7 +1,8 @@
 "use strict";
-importScripts("policy.js", "guard.js");
+importScripts("i18n.js", "policy.js", "guard.js");
 let guardedDocuments = {};
 const P = QuedatePolicy;
+const text = (key, values) => StayHereText.get(settings.language, key, values);
 let settings = P.normalizeSettings();
 const states = new Map();
 const handledTargets = new Set();
@@ -53,14 +54,14 @@ async function badge(tabId) {
   const count = state.popups + state.redirects;
   await Promise.allSettled([
     chrome.action.setBadgeText({ tabId, text: protectedPage && count ? (count > 99 ? "99+" : String(count)) : "" }),
-    chrome.action.setBadgeBackgroundColor({ tabId, color: "#116b58" }),
-    chrome.action.setTitle({ tabId, title: protectedPage ? `Stay Here · ${count} bloqueos en esta pestaña` : "Stay Here · sin protección en este sitio" })
+    chrome.action.setBadgeBackgroundColor({ tabId, color: "#72A5F2" }),
+    chrome.action.setTitle({ tabId, title: protectedPage ? text("badgeCount", { count }) : text("badgeUnprotected") })
   ]);
 }
 async function record(tabId, kind, url, reason) {
   const state = stateFor(tabId);
   state[kind] += 1;
-  state.last = { host: P.webURL(url)?.hostname || "Apertura sin dirección", reason };
+  state.last = { host: P.webURL(url)?.hostname || "", reason };
   await Promise.all([badge(tabId), saveSession()]);
 }
 async function closePopup(sourceTabId, tabId, url, frameId) {
@@ -79,7 +80,7 @@ async function closePopup(sourceTabId, tabId, url, frameId) {
   handledTargets.add(tabId);
   try { await chrome.tabs.remove(tabId); }
   catch { handledTargets.delete(tabId); return; }
-  await record(sourceTabId, "popups", url, "Pestaña o ventana emergente cerrada");
+  await record(sourceTabId, "popups", url, "popupClosed");
   if (target.active) await chrome.tabs.update(sourceTabId, { active: true }).catch(() => {});
 }
 
@@ -106,7 +107,7 @@ chrome.webNavigation.onCommitted.addListener(details => {
     const now = Date.now();
     if (P.unexpectedRedirect(previous, details, settings, intended) && now - state.lastReturn > 15000) {
       state.lastReturn = now;
-      await record(details.tabId, "redirects", details.url, "Se volvió a la dirección anterior");
+      await record(details.tabId, "redirects", details.url, "redirectReturned");
       // webNavigation is observational: this restores the URL after commitment.
       // A cooldown prevents sites with on-load redirects from causing reload loops.
       await chrome.tabs.update(details.tabId, { url: previous }).catch(() => {});
@@ -170,7 +171,7 @@ async function saveSettings(next) {
   await Promise.allSettled([...states.keys()].map(badge));
 }
 async function handleMessage(message, sender) {
-  if (sender.id !== chrome.runtime.id || !message || typeof message.type !== "string") throw new Error("Mensaje no válido");
+  if (sender.id !== chrome.runtime.id || !message || typeof message.type !== "string") throw new Error("invalidMessage");
   if (sender.tab && Number.isInteger(sender.tab.id) && !sender.url?.startsWith(chrome.runtime.getURL(""))) {
     const tabId = sender.tab.id;
     const state = stateFor(tabId, sender.tab.url);
@@ -196,32 +197,33 @@ async function handleMessage(message, sender) {
       const now = Date.now();
       if (now - (state.lastReport || 0) < 150) return {};
       state.lastReport = now;
-      await record(tabId, "popups", String(message.url || "").slice(0, 4096), "Apertura interceptada en la página");
+      await record(tabId, "popups", String(message.url || "").slice(0, 4096), "pageIntercepted");
       return {};
     }
     return {};
   }
-  if (!sender.url?.startsWith(chrome.runtime.getURL(""))) throw new Error("Origen no válido");
-  if (!Number.isInteger(message.tabId)) throw new Error("No se encontró la pestaña");
+  if (!sender.url?.startsWith(chrome.runtime.getURL(""))) throw new Error("invalidOrigin");
+  if (!Number.isInteger(message.tabId)) throw new Error("noTab");
   if (message.type === "getPopup") return popupState(message.tabId);
   if (message.type === "setOptions") {
     const next = { ...settings };
     for (const key of ["enabled", "allowClickedLinks", "strictRedirects"]) {
       if (typeof message[key] === "boolean") next[key] = message[key];
     }
+    if (["en", "es"].includes(message.language)) next.language = message.language;
     await saveSettings(next);
     return popupState(message.tabId);
   }
   if (message.type === "setSiteAllowed") {
     const tab = await chrome.tabs.get(message.tabId);
     const host = P.webURL(tab.url)?.hostname;
-    if (!host) throw new Error("Abre una página web para cambiar esta opción");
+    if (!host) throw new Error("openSiteFirst");
     const hosts = settings.allowedHosts.filter(item => item !== host);
     if (message.allowed === true) hosts.push(host);
     await saveSettings({ ...settings, allowedHosts: hosts });
     return popupState(message.tabId);
   }
-  throw new Error("Opción desconocida");
+  throw new Error("unknownOption");
 }
 chrome.runtime.onMessage.addListener((message, sender, respond) => {
   enqueue(() => handleMessage(message, sender)).then(respond, error => respond({ error: error.message }));

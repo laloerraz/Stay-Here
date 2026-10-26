@@ -1,53 +1,61 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stay Here</title>
   <link rel="stylesheet" href="popup.css">
   <script src="support-config.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="popup.js" defer></script>
 </head>
 <body>
   <header>
     <img class="logo" src="icons/icon-128.png" alt="" width="42" height="42">
-    <div class="brand-copy"><h1>Stay Here</h1><p>Tu pestaña, tranquila.</p></div>
-    <a id="support" class="coffee-button" hidden target="_blank" rel="noopener noreferrer" aria-label="Apoyar Stay Here en Ko-fi" title="Apoyar Stay Here en Ko-fi"><span aria-hidden="true">☕</span></a>
-    <label class="switch" title="Activar protección global">
-      <input type="checkbox" id="enabled" aria-label="Activar protección global">
+    <div class="brand-copy"><h1>Stay Here</h1><p data-i18n="tagline">Your tab, undisturbed.</p></div>
+    <a id="support" class="coffee-button" hidden target="_blank" rel="noopener noreferrer" data-i18n-label="support" data-i18n-title="support" aria-label="Support Stay Here on Ko-fi" title="Support Stay Here on Ko-fi"><img src="icons/kofi-symbol.png" alt="" width="34" height="34"></a>
+    <button id="settings-toggle" class="settings-button" type="button" aria-expanded="false" aria-controls="settings-panel" data-i18n-label="settings" data-i18n-title="settings" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.3 3.5h5.4l.6 2.4 2.1 1.2 2.4-.7 2.7 4.6-1.8 1.7v2.4l1.8 1.7-2.7 4.6-2.4-.7-2.1 1.2-.6 2.4H9.3l-.6-2.4-2.1-1.2-2.4.7-2.7-4.6 1.8-1.7v-2.4L1.5 11l2.7-4.6 2.4.7 2.1-1.2z" transform="translate(0 -2) scale(1 .95)"/><circle cx="12" cy="12" r="3.2"/></svg></button>
+    <label class="switch" data-i18n-title="globalProtection" title="Enable global protection">
+      <input type="checkbox" id="enabled" data-i18n-label="globalProtection" aria-label="Enable global protection">
       <span></span>
     </label>
   </header>
   <main>
+    <section id="settings-panel" class="settings-panel" aria-labelledby="settings-heading" hidden>
+      <h2 id="settings-heading" data-i18n="settings">Settings</h2>
+      <label for="language" data-i18n="language">Language</label>
+      <select id="language"><option value="en" lang="en">English</option><option value="es" lang="es">Español</option></select>
+      <p data-i18n="languageHint">Choose the language for this panel. Your choice is saved on this device.</p>
+    </section>
     <section class="site-card">
-      <p class="eyebrow">ESTE SITIO</p>
-      <h2 id="host">Cargando…</h2>
-      <p id="status" role="status">Consultando protección</p>
-      <button id="site" disabled>Permitir este sitio</button>
+      <p class="eyebrow" data-i18n="thisSite">THIS SITE</p>
+      <h2 id="host" data-i18n="loading">Loading…</h2>
+      <p id="status" role="status" data-i18n="checking">Checking protection</p>
+      <button id="site" disabled>Allow this site</button>
     </section>
-    <section class="counters" aria-label="Bloqueos en esta pestaña durante la sesión">
-      <div><strong id="popups">0</strong><span>Aperturas frenadas</span></div>
-      <div><strong id="redirects">0</strong><span>Regresos a la página</span></div>
+    <section class="counters" data-i18n-label="countersLabel" aria-label="Blocks in this tab during this browser session">
+      <div><strong id="popups">0</strong><span data-i18n="popups">Openings stopped</span></div>
+      <div><strong id="redirects">0</strong><span data-i18n="redirects">Returns to the page</span></div>
     </section>
     <div class="option">
-      <label for="allowClickedLinks">Permitir enlaces a otra pestaña</label>
+      <label for="allowClickedLinks" data-i18n="allowLinks">Allow clicked links to open new tabs</label>
       <input type="checkbox" id="allowClickedLinks">
-      <p>Solo enlaces que pulses tú. Las aperturas por scripts siguen bloqueadas.</p>
+      <p data-i18n="allowLinksHint">Only links you click. Scripted openings remain blocked.</p>
     </div>
     <div class="option">
-      <label for="strictRedirects">Volver tras una redirección automática</label>
+      <label for="strictRedirects" data-i18n="returnRedirect">Return after an automatic redirect</label>
       <input type="checkbox" id="strictRedirects">
-      <p>Opcional: intenta regresar si un script te lleva a otro dominio. Puede recargar la página y afectar inicios de sesión.</p>
+      <p data-i18n="returnRedirectHint">Optional: tries to return when a script takes you to another domain. May reload the page and affect sign-ins.</p>
     </div>
-    <p class="tip"><span aria-hidden="true">⌘</span> Para abrir un enlace a propósito, usa <b>Ctrl + clic</b>, el botón central o el menú del clic derecho.</p>
+    <p class="tip" data-i18n="tip">To open a link deliberately, use Ctrl + click (Cmd on Mac), the middle mouse button, or the right-click menu.</p>
     <p id="last" class="last" hidden></p>
-    <button id="reload" type="button">Recargar esta página para aplicar cambios</button>
+    <button id="reload" type="button" data-i18n="reload">Reload this page to apply changes</button>
     <p id="feedback" role="status" class="feedback"></p>
   </main>
   <footer>
-    <p>Gratis · Sin servidores propios</p>
-    <p id="support-note" hidden>Aporte voluntario. Todas las funciones siguen siendo gratis.</p>
-    <a href="privacy.html" target="_blank" rel="noopener">Privacidad</a>
+    <p data-i18n="free">Free · No servers of our own</p>
+    <p id="support-note" hidden data-i18n="supportNote">Optional support. Every feature remains free.</p>
+    <a id="privacy-link" href="privacy.en.html" target="_blank" rel="noopener" data-i18n="privacy">Privacy</a>
   </footer>
 </body>
 </html>
