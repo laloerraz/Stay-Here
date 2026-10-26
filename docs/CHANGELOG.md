@@ -2,6 +2,8 @@
 
 ## 1.1.3
 
+- Botón de Ko-fi con símbolo de café de mayor tamaño junto al nombre y al interruptor del panel.
+
 - Una descarga de instalación identificada como `StayHere-1.1.3.zip`, con `manifest.json` en su raíz.
 - Instrucciones de instalación directas y diferenciadas de las descargas de código fuente.
 - Verificación de los archivos del ZIP generado y comprobación de navegador sobre la copia extraída del paquete.

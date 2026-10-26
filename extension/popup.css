@@ -1,7 +1,7 @@
 :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; color: #18392f; background: #f3f8fc; }
 * { box-sizing: border-box; }
 body { width: 370px; margin: 0; font-size: 13px; }
-header { display: flex; align-items: center; gap: 11px; padding: 22px 22px 20px; background: #fff; border-bottom: 1px solid #e4e8e0; }
+header { display: flex; align-items: center; gap: 10px; padding: 18px 20px; background: #fff; border-bottom: 1px solid #e4e8e0; }
 h1 { font-size: 20px; margin: 0; letter-spacing: -.6px; }
 header p { font-size: 12px; margin: 3px 0 0; color: #64786d; }
 .logo { position: relative; width: 39px; height: 39px; display: grid; place-items: center; background: #17658b; color: white; border-radius: 12px; font-size: 30px; line-height: 1; }
@@ -41,3 +41,10 @@ footer { text-align: center; font-size: 10px; color: #798c80; padding: 0 12px 17
 footer p { margin: 7px 0; }
 footer a { color: #145a80; }
 [hidden] { display: none !important; }
+
+.brand-copy { flex: 1; min-width: 0; }
+.brand-copy h1, .brand-copy p { white-space: nowrap; }
+.coffee-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 48px; width: 48px; height: 48px; border: 1px solid #c8e5f5; border-radius: 14px; background: #e9f5fc; text-decoration: none; cursor: pointer; }
+.coffee-button span { font-size: 29px; line-height: 1; }
+.coffee-button:hover { background: #d8edf9; border-color: #7dbbdc; }
+.coffee-button:focus-visible { outline: 3px solid #17658b; outline-offset: 3px; }
