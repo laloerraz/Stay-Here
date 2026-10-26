@@ -2,7 +2,7 @@
 
 En un repositorio público, todo el código, la documentación y el historial publicado son visibles. GitHub no permite ocultar archivos individuales a ciertos visitantes de un mismo repositorio público.
 
-`content.js`, las pruebas y `PRUEBAS.md` contienen funcionamiento y documentación del producto. No contienen los datos de navegación de los usuarios ni credenciales de pagos. El código de una extensión distribuida también puede ser inspeccionado por quien la instala.
+`extension/content.js`, las pruebas y `docs/PRUEBAS.md` contienen funcionamiento y documentación del producto. No contienen los datos de navegación de los usuarios ni credenciales de pagos. El código de una extensión distribuida también puede ser inspeccionado por quien la instala.
 
 La integración con Ko-fi incluye únicamente el enlace público `https://ko-fi.com/laloerraz`. El navegador abre esa página al pulsar el botón; la extensión no incluye claves de Ko-fi, datos bancarios, contraseñas ni un procesador de tarjetas. No envía a Ko-fi el historial de navegación ni el dominio que se está protegiendo.
 

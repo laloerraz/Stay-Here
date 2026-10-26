@@ -1,4 +1,4 @@
-# Verificación de Stay Here 1.1.1
+# Verificación de Stay Here 1.1.2
 
 Comprobada el 26 de octubre de 2026.
 
@@ -6,7 +6,7 @@ Comprobada el 26 de octubre de 2026.
 - Archivos JavaScript del producto comprobados con `node --check`.
 - Extensión instalada mediante Playwright en un perfil temporal de **Microsoft Edge 156.0.4314.42**, motor Chromium. No se usó el perfil personal.
 - Prueba de integración aprobada: carga del service worker, falsificación del antiguo mensaje sin desactivar el guard, bloqueo de window.open, enlace target blank, Ctrl + clic permitido, panel con estado real y excepción de dominio aplicada tras recargar.
-- Capturas `store/panel-real.png` y `store/pagina-real.png` obtenidas con la extensión real y una página local de prueba. El panel se abrió en una pestaña de extensión y se seleccionó explícitamente la pestaña fuente mediante su identificador real. No se simularon contadores ni APIs para estas capturas.
+- Capturas `imagenes/panel-real.png` y `imagenes/pagina-real.png` obtenidas con la extensión real y una página local de prueba. El panel se abrió en una pestaña de extensión y se seleccionó explícitamente la pestaña fuente mediante su identificador real. No se simularon contadores ni APIs para estas capturas.
 
 ## Pendientes manuales
 

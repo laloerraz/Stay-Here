@@ -1,5 +1,12 @@
 # Cambios
 
+## 1.1.2
+
+- Código de la extensión agrupado en `extension/`.
+- Imágenes, pruebas documentadas y materiales de publicación reunidos en `docs/`.
+- README centrado en instalación y uso, con una guía separada para desarrollo.
+- Rutas de pruebas, validación y empaquetado adaptadas a la nueva estructura.
+
 ## 1.1.1
 
 - Botón de apoyo conectado a la página pública de Ko-fi de laloerraz.

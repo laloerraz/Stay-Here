@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const extension = fs.existsSync(path.join(__dirname, '..', 'manifest.json')) ? path.join(__dirname, '..') : path.join(__dirname, '..', 'extension');
+const extension = path.join(__dirname, '..', 'extension');
 const clone = value => structuredClone(value);
 function event() {
   const listeners = [];

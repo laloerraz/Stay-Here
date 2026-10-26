@@ -6,7 +6,8 @@ const os = require('node:os');
 const path = require('node:path');
 const http = require('node:http');
 const assert = require('node:assert/strict');
-const root = path.resolve(__dirname, '..');
+const projectRoot = path.resolve(__dirname, '..');
+const root = path.join(projectRoot, 'extension');
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'stayhere-smoke-'));
 const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -68,7 +69,7 @@ const server = http.createServer((req, res) => {
     await supportPage.waitForURL('https://ko-fi.com/laloerraz');
     assert.equal(await supportPage.evaluate(() => window.opener === null), true);
     await supportPage.close();
-    const screenshots = path.join(root, 'store');
+    const screenshots = path.join(projectRoot, 'docs', 'imagenes');
     fs.mkdirSync(screenshots, { recursive: true });
     await popup.locator('body').screenshot({ path: path.join(screenshots, 'panel-real.png') });
     await page.screenshot({ path: path.join(screenshots, 'pagina-real.png') });
