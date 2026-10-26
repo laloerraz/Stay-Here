@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Pruebas de Stay Here</title>
+<script src="browser-harness.js"></script>
+<script src="../guard.js"></script>
+<script src="../content.js"></script>
+<style>body{font:16px system-ui;margin:40px;max-width:900px;background:#f3f5ef;color:#18392f}button,a,input{margin:8px;padding:12px}a{display:inline-block}section,pre{background:white;border:1px solid #dce3d7;padding:18px;border-radius:12px;margin-top:20px}pre{white-space:pre-wrap}h1{letter-spacing:-1px}</style>
+</head><body>
+<h1>Pruebas locales de Stay Here</h1>
+<p>Usa los archivos reales de protección con la API de extensión simulada. No instala la extensión. Los cambios de protección de scripts requieren recargar el documento.</p>
+<section>
+<button id="script-open">Probar apertura por script</button>
+<button id="synthetic">Probar enlace programático</button>
+<a id="new-link" href="https://example.com/help" target="_blank">Enlace que abre otra pestaña</a>
+<a id="same-link" href="#misma-pagina">Enlace normal en esta pestaña</a>
+<button id="fake-click">Probar clic falsificado</button>
+<button id="meta-refresh">Probar redirección meta</button>
+<button id="pause">Pausar protección</button>
+<button id="allow">Permitir enlaces reales</button>
+<button id="strict">Activar regreso opcional</button>
+</section>
+<pre id="result" role="status">Sin acciones</pre>
+<section id="misma-pagina"><b>La página original sigue abierta.</b><p id="form-status">Formulario sin enviar</p>
+<form id="form" action="https://example.com/form" target="_blank"><input name="test" value="prueba" aria-label="Dato de prueba"><button type="submit">Enviar formulario a otra pestaña</button></form>
+</section>
+<script src="browser-actions.js"></script>
+</body></html>

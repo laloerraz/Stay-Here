@@ -1,0 +1,3 @@
+Logo generado con la herramienta integrada ImageGen, 26 de octubre de 2026.
+Prompt: Use case: logo-brand. Create a single polished flat logo icon for browser extension Stay Here. A clearly recognizable open upright hand, palm facing viewer, five fingers, stop gesture, white hand with a simple deep navy outline, centered on a solid light sky blue circle. Friendly clear geometric silhouette legible at 16 pixels. No text, no lettering, no gradients, no shadow, no extra symbols. Square canvas, circle diameter 78 percent of canvas, fully transparent outside circle. Professional clean minimal vector-like bitmap mark.
+Original: stay-here-logo.png. Iconos derivados por reducción a 16, 32, 48 y 128 píxeles mediante Sharp, manteniendo transparencia.

@@ -1,0 +1,9 @@
+dist/
+node_modules/
+.browser-profile*/
+test-results/
+*.crx
+*.pem
+.env
+.env.*
+!.env.example

@@ -1,0 +1,20 @@
+name: Comprobaciones
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verificar archivos y ejecutar pruebas
+        run: |
+          node --version
+          node scripts/validate.cjs
+          node --test tests/protection.test.cjs

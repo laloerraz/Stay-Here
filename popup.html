@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stay Here</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="support-config.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header>
+    <img class="logo" src="icons/icon-128.png" alt="" width="42" height="42">
+    <div><h1>Stay Here</h1><p>Tu pestaña, tranquila.</p></div>
+    <label class="switch" title="Activar protección global">
+      <input type="checkbox" id="enabled" aria-label="Activar protección global">
+      <span></span>
+    </label>
+  </header>
+  <main>
+    <section class="site-card">
+      <p class="eyebrow">ESTE SITIO</p>
+      <h2 id="host">Cargando…</h2>
+      <p id="status" role="status">Consultando protección</p>
+      <button id="site" disabled>Permitir este sitio</button>
+    </section>
+    <section class="counters" aria-label="Bloqueos en esta pestaña durante la sesión">
+      <div><strong id="popups">0</strong><span>Aperturas frenadas</span></div>
+      <div><strong id="redirects">0</strong><span>Regresos a la página</span></div>
+    </section>
+    <div class="option">
+      <label for="allowClickedLinks">Permitir enlaces a otra pestaña</label>
+      <input type="checkbox" id="allowClickedLinks">
+      <p>Solo enlaces que pulses tú. Las aperturas por scripts siguen bloqueadas.</p>
+    </div>
+    <div class="option">
+      <label for="strictRedirects">Volver tras una redirección automática</label>
+      <input type="checkbox" id="strictRedirects">
+      <p>Opcional: intenta regresar si un script te lleva a otro dominio. Puede recargar la página y afectar inicios de sesión.</p>
+    </div>
+    <p class="tip"><span aria-hidden="true">⌘</span> Para abrir un enlace a propósito, usa <b>Ctrl + clic</b>, el botón central o el menú del clic derecho.</p>
+    <p id="last" class="last" hidden></p>
+    <button id="reload" type="button">Recargar esta página para aplicar cambios</button>
+    <p id="feedback" role="status" class="feedback"></p>
+  </main>
+  <footer>
+    <p>Gratis · Sin servidores propios</p>
+    <a id="support" hidden target="_blank" rel="noopener noreferrer">Apoya Stay Here en Ko-fi</a>
+    <p id="support-note" hidden>Aporte voluntario. Todas las funciones siguen siendo gratis.</p>
+    <a href="privacy.html" target="_blank" rel="noopener">Privacidad</a>
+  </footer>
+</body>
+</html>

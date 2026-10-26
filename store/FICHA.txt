@@ -1,0 +1,35 @@
+Stay Here — contenido para Chrome Web Store
+
+Nombre del manifiesto: Stay Here
+Descripción breve: Frena aperturas de publicidad y cierra pestañas emergentes. Control global y excepciones por sitio.
+Categoría sugerida: Herramientas / funcionalidad del navegador, según las opciones del panel.
+Idioma: español. El nombre de marca es inglés; la interfaz actual es español.
+
+Descripción ampliada
+Stay Here ayuda a mantenerte en tu pestaña cuando una página intenta abrir ventanas o pestañas emergentes.
+
+- Frena aperturas por scripts y cierra pestañas emergentes detectadas.
+- Pausa global y excepciones por dominio exacto.
+- Opción para permitir enlaces que tú pulses.
+- Contadores por pestaña durante la sesión.
+- Regreso opcional ante ciertas redirecciones automáticas entre dominios.
+- Funciones gratuitas y procesamiento de la protección en tu navegador, sin servidores propios ni analítica.
+
+El bloqueo es agresivo y puede afectar ventanas legítimas. Permite el sitio cuando lo necesites y recarga la página. Usa Ctrl + clic, Cmd + clic en Mac, botón central o menú contextual para abrir enlaces deliberadamente.
+El regreso opcional no impide toda redirección y puede recargar formularios o reproducción. No funciona en páginas internas de Chrome ni en Chrome Web Store. No garantiza bloquear toda apertura. Puede utilizarse junto a uBlock Origin Lite; no lo incluye ni representa a sus desarrolladores.
+
+Finalidad única
+Ayudar a controlar aperturas no deseadas de pestañas y ventanas durante la navegación, con ajustes globales, excepciones por sitio y una opción de regreso ante ciertas redirecciones.
+
+Justificación de permisos
+storage: guardar opciones y excepciones localmente y estados temporales en almacenamiento de sesión.
+webNavigation: identificar la pestaña de origen, destinos creados y navegaciones para cerrar emergentes o aplicar el retorno opcional.
+scripting: inyectar en el documento exacto la protección de scripts con una política privada suministrada por la extensión.
+http://*/* y https://*/*: detectar enlaces y aplicar la protección en los sitios y marcos compatibles, de acuerdo con las excepciones del usuario.
+Código remoto: no se utiliza. Toda la lógica se incluye en el paquete.
+
+Privacidad
+No se transmiten datos de navegación al desarrollador ni se usa analítica. Sí se procesan localmente direcciones e intenciones de navegación para la función descrita. No confundir ausencia de transmisión con ausencia de manejo de datos. Completa las declaraciones según las definiciones del formulario vigente y la política publicada.
+
+Campos que debe completar el titular
+Correo/contacto de soporte, identidad del desarrollador y URL pública de privacidad. No se inventaron datos de cuenta ni enlaces de repositorio.
