@@ -1,5 +1,11 @@
 # Cambios
 
+## 1.1.3
+
+- Una descarga de instalación identificada como `StayHere-1.1.3.zip`, con `manifest.json` en su raíz.
+- Instrucciones de instalación directas y diferenciadas de las descargas de código fuente.
+- Verificación de los archivos del ZIP generado y comprobación de navegador sobre la copia extraída del paquete.
+
 ## 1.1.2
 
 - Código de la extensión agrupado en `extension/`.

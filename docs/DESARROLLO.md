@@ -49,7 +49,7 @@ En PowerShell, desde la raíz:
 powershell -ExecutionPolicy Bypass -File scripts/package.ps1
 ```
 
-El script obtiene la versión desde `extension/manifest.json` y crea el ZIP en `dist/`. Incluye los archivos de `extension/` y la licencia de la raíz; deja el manifiesto en la raíz del ZIP. Excluye pruebas, documentación de desarrollo, imágenes promocionales y `.git`.
+El script obtiene la versión desde `extension/manifest.json` y crea `dist/StayHere-VERSION.zip`. Verifica que el ZIP incluya el manifiesto y todos los archivos requeridos directamente en sus ubicaciones de instalación. Incluye los archivos de `extension/` y la licencia de la raíz; deja el manifiesto en la raíz del ZIP. Excluye pruebas, documentación de desarrollo, imágenes promocionales y `.git`.
 
 ## Preparar Chrome Web Store
 
@@ -66,3 +66,5 @@ La política incluida en `extension/privacy.html` debe coincidir con `docs/priva
 `extension/support-config.js` contiene solo el enlace público del creador. `.github/FUNDING.yml` configura el destino de Sponsor. No se necesitan claves ni datos de pago en el código.
 
 Las conversaciones, credenciales y perfiles personales deben quedar fuera del repositorio. Consulta [Repositorio y privacidad](REPOSITORIO_Y_PRIVACIDAD.md) y la [política de seguridad](../.github/SECURITY.md).
+
+Para comprobar la distribución final, extrae ese ZIP y ejecuta `tests/extension-smoke.cjs` indicando la carpeta extraída con `STAYHERE_EXTENSION_ROOT`. Así se verifica la misma estructura que recibe quien descarga el instalador.

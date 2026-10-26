@@ -7,7 +7,8 @@ const path = require('node:path');
 const http = require('node:http');
 const assert = require('node:assert/strict');
 const projectRoot = path.resolve(__dirname, '..');
-const root = path.join(projectRoot, 'extension');
+const root = process.env.STAYHERE_EXTENSION_ROOT ? path.resolve(process.env.STAYHERE_EXTENSION_ROOT) : path.join(projectRoot, 'extension');
+assert.ok(fs.existsSync(path.join(root, 'manifest.json')), 'Select the folder containing manifest.json directly');
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'stayhere-smoke-'));
 const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -69,7 +70,7 @@ const server = http.createServer((req, res) => {
     await supportPage.waitForURL('https://ko-fi.com/laloerraz');
     assert.equal(await supportPage.evaluate(() => window.opener === null), true);
     await supportPage.close();
-    const screenshots = path.join(projectRoot, 'docs', 'imagenes');
+    const screenshots = process.env.STAYHERE_SCREENSHOTS || path.join(projectRoot, 'docs', 'imagenes');
     fs.mkdirSync(screenshots, { recursive: true });
     await popup.locator('body').screenshot({ path: path.join(screenshots, 'panel-real.png') });
     await page.screenshot({ path: path.join(screenshots, 'pagina-real.png') });
@@ -80,7 +81,7 @@ const server = http.createServer((req, res) => {
     const allowed = await page.evaluate(() => { const w = window.open('/destination'); const ok = Boolean(w); w?.close(); return ok; });
     assert.equal(allowed, true);
     assert.deepEqual(errors, []);
-    console.log(JSON.stringify({ browser: context.browser()?.version(), extensionId, result: 'PASS', scenarios: ['install','forged policy','script popup','normal target blank','Ctrl click','real panel','host exception after reload'], screenshots }, null, 2));
+    console.log(JSON.stringify({ browser: context.browser()?.version(), extensionId, extensionRoot: root, version: JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8')).version, result: 'PASS', scenarios: ['install','forged policy','script popup','normal target blank','Ctrl click','real panel','host exception after reload'], screenshots }, null, 2));
   } finally {
     await context?.close();
     server.close();

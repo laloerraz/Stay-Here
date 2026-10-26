@@ -1,9 +1,11 @@
-# Verificación de Stay Here 1.1.2
+# Verificación de Stay Here 1.1.3
 
 Comprobada el 26 de octubre de 2026.
 
 - 32 pruebas automatizadas aprobadas con `node --test tests/protection.test.cjs`. Usan el código real con APIs de Chrome simuladas e incluyen falsificación de políticas, inyección por documento, reinicio del worker, pausa/excepciones y cierres de pestañas.
 - Archivos JavaScript del producto comprobados con `node --check`.
+- ZIP final extraído y comprobado: `manifest.json`, scripts e iconos directamente en la carpeta de instalación. La prueba de integración se ejecutó sobre esa copia extraída, no sobre el directorio de fuentes.
+- Google Chrome **155.0.8059.85** leyó y empaquetó la copia del ZIP mediante `--pack-extension` (código de salida 0). Esto comprueba que Chrome acepta el manifiesto y empaquetado; no equivale a una instalación en el perfil personal.
 - Extensión instalada mediante Playwright en un perfil temporal de **Microsoft Edge 156.0.4314.42**, motor Chromium. No se usó el perfil personal.
 - Prueba de integración aprobada: carga del service worker, falsificación del antiguo mensaje sin desactivar el guard, bloqueo de window.open, enlace target blank, Ctrl + clic permitido, panel con estado real y excepción de dominio aplicada tras recargar.
 - Capturas `imagenes/panel-real.png` y `imagenes/pagina-real.png` obtenidas con la extensión real y una página local de prueba. El panel se abrió en una pestaña de extensión y se seleccionó explícitamente la pestaña fuente mediante su identificador real. No se simularon contadores ni APIs para estas capturas.

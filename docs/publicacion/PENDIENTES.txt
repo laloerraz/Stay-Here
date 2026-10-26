@@ -1,4 +1,4 @@
-Antes de enviar Stay Here 1.1.2
+Antes de enviar Stay Here 1.1.3
 
 [ ] Revisar resultados de docs/PRUEBAS.md y completar los casos manuales pendientes, especialmente Chrome real y uBlock Origin Lite.
 [x] Ko-fi conectado: https://ko-fi.com/laloerraz . El pago se hace en su página externa.
@@ -6,7 +6,7 @@ Antes de enviar Stay Here 1.1.2
 [ ] Publicar docs/privacy.html en una URL accesible sin iniciar sesión y añadirla al panel. La copia local dentro del paquete no sustituye ese requisito.
 [ ] Revisar la política y las declaraciones de datos/permisos, incluyendo scripting y el procesamiento local de URLs.
 [ ] Crear/configurar cuenta de desarrollador y activar verificación en dos pasos.
-[ ] Subir dist/StayHere-1.1.2-chrome.zip, la ficha y las capturas finales revisadas.
+[ ] Subir dist/StayHere-1.1.3.zip, la ficha y las capturas finales revisadas.
 [ ] No anunciar bloqueo absoluto ni afirmar que uBlock es requisito.
 
 Repositorio privado existente: https://github.com/laloerraz/Stay-Here . La publicación en Chrome Web Store y el alojamiento público de la política siguen pendientes.

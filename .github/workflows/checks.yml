@@ -19,3 +19,6 @@ jobs:
           node scripts/validate.cjs
           node scripts/check-secrets.cjs
           node --test tests/protection.test.cjs
+      - name: Comprobar el ZIP de instalación
+        shell: pwsh
+        run: ./scripts/package.ps1

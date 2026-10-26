@@ -6,16 +6,19 @@ Extensión gratuita para Chrome que ayuda a frenar ventanas y pestañas emergent
 
 Mantenido por [laloerraz](https://github.com/laloerraz) · [Licencia MIT](LICENSE)
 
-## Instalación manual
+## Instalar en Chrome
 
-La publicación en Chrome Web Store está pendiente. Para probarla desde el código:
+La publicación en Chrome Web Store está pendiente.
 
-1. Descarga el repositorio desde **Code → Download ZIP** y extrae el archivo, o clónalo con Git.
-2. Abre `chrome://extensions` y activa **Modo de desarrollador**.
-3. Pulsa **Cargar descomprimida** y selecciona la carpeta **`extension`**, que contiene `manifest.json`.
-4. Recarga las páginas que ya estaban abiertas. Puedes fijar el icono de Stay Here en la barra del navegador.
+1. Descarga **[StayHere-1.1.3.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.3.zip)**.
+2. Haz clic derecho en el ZIP y elige **Extraer todo**.
+3. Abre la carpeta extraída. Debes ver **`manifest.json` directamente dentro de ella**, junto a `background.js` y `popup.html`.
+4. Abre `chrome://extensions`, activa **Modo de desarrollador** y pulsa **Cargar descomprimida**.
+5. Selecciona esa carpeta y recarga las páginas que ya estaban abiertas.
 
-Si utilizas un ZIP de distribución de la extensión, extráelo y selecciona directamente la carpeta que contiene `manifest.json`.
+Conserva la carpeta extraída en una ubicación permanente. Chrome la necesita para cargar la extensión.
+
+Los archivos **Source code** y **Code → Download ZIP** son el proyecto para desarrollo. Si usas uno de ellos, la carpeta que debes seleccionar es `extension`, dentro del proyecto extraído. Si Chrome indica que falta el manifiesto, abre la carpeta elegida y comprueba que `manifest.json` esté a la vista, sin entrar a otra subcarpeta.
 
 ## Uso
 
