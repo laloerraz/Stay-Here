@@ -8,6 +8,14 @@ A free Chrome extension that helps stop unwanted popup windows and tabs, with si
 
 Maintained by [laloerraz](https://github.com/laloerraz) · [MIT license](LICENSE)
 
+## Preview and demo
+
+[![Stay Here official preview](docs/imagenes/stay-here-official-1600x1800.png)](docs/imagenes/stay-here-official-1600x1800.png)
+
+**[Watch the final demo video (MP4)](https://github.com/laloerraz/Stay-Here/releases/download/v1.1.5/StayHere-Reddit-1080p-final.mp4)** · [Open full-resolution image (1600 × 1800)](docs/imagenes/stay-here-official-1600x1800.png)
+
+Illustrative interface preview with example data.
+
 ## Install in Chrome
 
 Chrome Web Store publication is pending.

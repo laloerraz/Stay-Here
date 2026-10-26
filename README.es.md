@@ -8,6 +8,14 @@ Extensión gratuita para Chrome que ayuda a frenar ventanas y pestañas emergent
 
 Mantenido por [laloerraz](https://github.com/laloerraz) · [Licencia MIT](LICENSE)
 
+## Vista previa y demostración
+
+[![Imagen oficial de Stay Here](docs/imagenes/stay-here-official-1600x1800.png)](docs/imagenes/stay-here-official-1600x1800.png)
+
+**[Ver el video final de demostración (MP4)](https://github.com/laloerraz/Stay-Here/releases/download/v1.1.5/StayHere-Reddit-1080p-final.mp4)** · [Abrir imagen en alta resolución (1600 × 1800)](docs/imagenes/stay-here-official-1600x1800.png)
+
+Vista ilustrativa de la interfaz con datos de ejemplo.
+
 ## Instalar en Chrome
 
 La publicación en Chrome Web Store está pendiente.
