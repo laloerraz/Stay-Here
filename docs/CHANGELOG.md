@@ -1,4 +1,13 @@
-# Cambios
+# Changelog
+
+## 1.1.5
+
+- Minimal white popup with fine dividers, compact controls and restrained blue accents.
+- Shorter English labels and a single-line summary of blocks in the current tab and session.
+- Original Stay Here hand and official Ko-fi cup retained in the header.
+- Language, privacy and support information remain available in Settings.
+- Clear status indicators for active protection, paused protection and site exceptions.
+- Locally packaged Bootstrap icons; no new permissions or remote runtime dependencies.
 
 ## 1.1.4
 

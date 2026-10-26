@@ -16,7 +16,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 $archive = [IO.Compression.ZipFile]::OpenRead($destination)
 try {
   $entries = @($archive.Entries | ForEach-Object { $_.FullName.Replace('\', '/') })
-  $required = @('manifest.json','background.js','policy.js','guard.js','content.js','popup.html','popup.js','popup.css','support-config.js','i18n.js','privacy.html','privacy.en.html','THIRD_PARTY_NOTICES.txt','_locales/en/messages.json','_locales/es/messages.json','icons/kofi-symbol.png','LICENSE','icons/icon-16.png','icons/icon-32.png','icons/icon-48.png','icons/icon-128.png')
+  $required = @('manifest.json','background.js','policy.js','guard.js','content.js','popup.html','popup.js','popup.css','support-config.js','i18n.js','privacy.html','privacy.en.html','THIRD_PARTY_NOTICES.txt','_locales/en/messages.json','_locales/es/messages.json','icons/kofi-symbol.png','icons/arrow-clockwise.svg','icons/gear-fill.svg','icons/bootstrap-icons-LICENSE.txt','LICENSE','icons/icon-16.png','icons/icon-32.png','icons/icon-48.png','icons/icon-128.png')
   foreach ($entry in $required) {
     if ($entry -notin $entries) { throw "El ZIP no es instalable: falta $entry en la ubicación esperada" }
   }

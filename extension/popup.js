@@ -29,6 +29,7 @@ function render(state) {
   byId("host").textContent = state.hostname || t("browserPage");
   byId("status").textContent = !state.hostname ? t("openWebPage") :
     !state.settings.enabled ? t("paused") : state.allowed ? t("allowedStatus") : t("active");
+  byId("status").dataset.protected = String(Boolean(state.hostname && state.settings.enabled && !state.allowed));
   byId("site").textContent = t(state.allowed ? "protectSite" : "allowSite");
   byId("site").disabled = !state.hostname || !state.settings.enabled;
   byId("popups").textContent = state.popups;
@@ -37,6 +38,7 @@ function render(state) {
   byId("last").textContent = state.last ? t("last", { host: state.last.host && state.last.host !== "Apertura sin dirección" ? state.last.host : t("unknownDestination"), reason: t(legacyReasons[state.last.reason] || state.last.reason) }) : "";
 }
 function feedback(key, error = false) {
+  byId("feedback").hidden = false;
   feedbackKey = t(key) === key ? "saveError" : key;
   const translated = t(feedbackKey);
   byId("feedback").textContent = translated === key && !["saved", "languageSaved"].includes(key) ? t("saveError") : translated;

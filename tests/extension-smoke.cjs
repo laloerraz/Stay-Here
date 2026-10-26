@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
     // A standalone extension tab has no action-popup association. Select the real
     // source tab explicitly while keeping all data/messages from the real worker.
     await popup.evaluate(async id => { tabId = id; render(await request({ type: 'getPopup' })); }, tabId);
-    await popup.waitForFunction(() => document.getElementById('status').textContent === 'Protection active');
+    await popup.waitForFunction(() => document.getElementById('status').textContent === 'Protected');
     await popup.locator('#settings-toggle').click();
     await popup.locator('#language').selectOption('es');
     await popup.waitForFunction(() => document.getElementById('status').textContent === 'Protección activa');
@@ -72,7 +72,7 @@ const server = http.createServer((req, res) => {
     await popup.waitForFunction(() => document.documentElement.lang === 'es' && document.getElementById('status').textContent === 'Protección activa');
     await popup.locator('#settings-toggle').click();
     await popup.locator('#language').selectOption('en');
-    await popup.waitForFunction(() => document.documentElement.lang === 'en' && document.getElementById('status').textContent === 'Protection active');
+    await popup.waitForFunction(() => document.documentElement.lang === 'en' && document.getElementById('status').textContent === 'Protected');
     await popup.locator('#settings-toggle').click();
     assert.equal(await popup.locator('#support').isVisible(), true);
     assert.equal(await popup.locator('#support').getAttribute('href'), 'https://ko-fi.com/laloerraz');

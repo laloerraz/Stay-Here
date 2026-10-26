@@ -12,7 +12,7 @@ Maintained by [laloerraz](https://github.com/laloerraz) · [MIT license](LICENSE
 
 Chrome Web Store publication is pending.
 
-1. Download **[StayHere-1.1.4.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.4.zip)**.
+1. Download **[StayHere-1.1.5.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.5.zip)**.
 2. Right-click the ZIP and choose **Extract all**.
 3. Open the extracted folder. **`manifest.json` must be directly inside it**, alongside `background.js` and `popup.html`.
 4. Open `chrome://extensions`, enable **Developer mode** and click **Load unpacked**.
@@ -34,7 +34,7 @@ Open **Settings** (the gear button) to choose **English** or **Español**. Your 
 
 After changing protection options or site exceptions, reload open pages to apply all changes. The panel has a button to reload the current page.
 
-![Stay Here panel during a local test](docs/imagenes/panel-real.png)
+![Stay Here panel during a local test](docs/imagenes/panel-minimal.png)
 
 ## Limits
 

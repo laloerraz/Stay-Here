@@ -12,7 +12,7 @@ Mantenido por [laloerraz](https://github.com/laloerraz) · [Licencia MIT](LICENS
 
 La publicación en Chrome Web Store está pendiente.
 
-1. Descarga **[StayHere-1.1.4.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.4.zip)**.
+1. Descarga **[StayHere-1.1.5.zip](https://github.com/laloerraz/Stay-Here/releases/latest/download/StayHere-1.1.5.zip)**.
 2. Haz clic derecho en el ZIP y elige **Extraer todo**.
 3. Abre la carpeta extraída. Debes ver **`manifest.json` directamente dentro de ella**, junto a `background.js` y `popup.html`.
 4. Abre `chrome://extensions`, activa **Modo de desarrollador** y pulsa **Cargar descomprimida**.

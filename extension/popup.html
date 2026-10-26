@@ -11,14 +11,10 @@
 </head>
 <body>
   <header>
-    <img class="logo" src="icons/icon-128.png" alt="" width="42" height="42">
-    <div class="brand-copy"><h1>Stay Here</h1><p data-i18n="tagline">Your tab, undisturbed.</p></div>
-    <a id="support" class="coffee-button" hidden target="_blank" rel="noopener noreferrer" data-i18n-label="support" data-i18n-title="support" aria-label="Support Stay Here on Ko-fi" title="Support Stay Here on Ko-fi"><img src="icons/kofi-symbol.png" alt="" width="34" height="34"></a>
-    <button id="settings-toggle" class="settings-button" type="button" aria-expanded="false" aria-controls="settings-panel" data-i18n-label="settings" data-i18n-title="settings" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.3 3.5h5.4l.6 2.4 2.1 1.2 2.4-.7 2.7 4.6-1.8 1.7v2.4l1.8 1.7-2.7 4.6-2.4-.7-2.1 1.2-.6 2.4H9.3l-.6-2.4-2.1-1.2-2.4.7-2.7-4.6 1.8-1.7v-2.4L1.5 11l2.7-4.6 2.4.7 2.1-1.2z" transform="translate(0 -2) scale(1 .95)"/><circle cx="12" cy="12" r="3.2"/></svg></button>
-    <label class="switch" data-i18n-title="globalProtection" title="Enable global protection">
-      <input type="checkbox" id="enabled" data-i18n-label="globalProtection" aria-label="Enable global protection">
-      <span></span>
-    </label>
+    <img class="logo" src="icons/icon-128.png" alt="" width="28" height="28">
+    <h1>Stay Here</h1>
+    <a id="support" class="coffee-button" hidden target="_blank" rel="noopener noreferrer" data-i18n-label="support" data-i18n-title="support" aria-label="Support Stay Here on Ko-fi" title="Support Stay Here on Ko-fi"><img src="icons/kofi-symbol.png" alt="" width="28" height="28"></a>
+    <button id="settings-toggle" class="settings-button" type="button" aria-expanded="false" aria-controls="settings-panel" data-i18n-label="settings" data-i18n-title="settings" aria-label="Settings" title="Settings"><img src="icons/gear-fill.svg" alt="" width="20" height="20"></button>
   </header>
   <main>
     <section id="settings-panel" class="settings-panel" aria-labelledby="settings-heading" hidden>
@@ -26,36 +22,44 @@
       <label for="language" data-i18n="language">Language</label>
       <select id="language"><option value="en" lang="en">English</option><option value="es" lang="es">Español</option></select>
       <p data-i18n="languageHint">Choose the language for this panel. Your choice is saved on this device.</p>
+      <p data-i18n="tip">To open a link deliberately, use Ctrl + click (Cmd on Mac), the middle mouse button, or the right-click menu.</p>
+      <p data-i18n="free">Free · No servers of our own</p>
+      <p id="support-note" hidden data-i18n="supportNote">Optional support. Every feature remains free.</p>
     </section>
-    <section class="site-card">
-      <p class="eyebrow" data-i18n="thisSite">THIS SITE</p>
-      <h2 id="host" data-i18n="loading">Loading…</h2>
+    <div class="protection-row">
+      <label for="enabled" data-i18n="protection">Protection</label>
+      <span class="switch"><input type="checkbox" id="enabled" role="switch" data-i18n-label="globalProtection" aria-label="Enable global protection"><span></span></span>
+    </div>
+    <section class="site-section" aria-labelledby="host">
+      <p class="eyebrow" data-i18n="thisSite">Current site</p>
+      <div class="site-row">
+        <h2 id="host" data-i18n="loading">Loading…</h2>
+        <button id="site" class="text-button" disabled>Allow this site</button>
+      </div>
       <p id="status" role="status" data-i18n="checking">Checking protection</p>
-      <button id="site" disabled>Allow this site</button>
     </section>
     <section class="counters" data-i18n-label="countersLabel" aria-label="Blocks in this tab during this browser session">
-      <div><strong id="popups">0</strong><span data-i18n="popups">Openings stopped</span></div>
-      <div><strong id="redirects">0</strong><span data-i18n="redirects">Returns to the page</span></div>
+      <p><span><strong id="popups">0</strong> <span data-i18n="popups">openings stopped</span></span><span class="counter-separator" aria-hidden="true"> · </span><span><strong id="redirects">0</strong> <span data-i18n="redirects">returns</span></span></p>
+      <p class="session-label" data-i18n="sessionLabel">This tab · This session</p>
     </section>
-    <div class="option">
-      <label for="allowClickedLinks" data-i18n="allowLinks">Allow clicked links to open new tabs</label>
-      <input type="checkbox" id="allowClickedLinks">
-      <p data-i18n="allowLinksHint">Only links you click. Scripted openings remain blocked.</p>
-    </div>
-    <div class="option">
-      <label for="strictRedirects" data-i18n="returnRedirect">Return after an automatic redirect</label>
-      <input type="checkbox" id="strictRedirects">
-      <p data-i18n="returnRedirectHint">Optional: tries to return when a script takes you to another domain. May reload the page and affect sign-ins.</p>
-    </div>
-    <p class="tip" data-i18n="tip">To open a link deliberately, use Ctrl + click (Cmd on Mac), the middle mouse button, or the right-click menu.</p>
+    <section class="options" data-i18n-label="protectionOptions" aria-label="Protection options">
+      <div class="option">
+        <label for="allowClickedLinks" data-i18n="allowLinks">Allow links I click</label>
+        <span class="switch"><input type="checkbox" role="switch" id="allowClickedLinks" aria-describedby="allow-links-hint"><span></span></span>
+        <p id="allow-links-hint" class="visually-hidden" data-i18n="allowLinksHint">Only links you click. Scripted openings remain blocked.</p>
+      </div>
+      <div class="option">
+        <label for="strictRedirects" data-i18n="returnRedirect">Return after auto redirects</label>
+        <span class="switch"><input type="checkbox" role="switch" id="strictRedirects" aria-describedby="redirect-hint"><span></span></span>
+        <p id="redirect-hint" data-i18n="returnRedirectHint">May affect sign-ins</p>
+      </div>
+    </section>
     <p id="last" class="last" hidden></p>
-    <button id="reload" type="button" data-i18n="reload">Reload this page to apply changes</button>
-    <p id="feedback" role="status" class="feedback"></p>
+    <div class="footer-row">
+      <button id="reload" type="button"><img src="icons/arrow-clockwise.svg" alt="" width="17" height="17"><span data-i18n="reload">Reload page</span></button>
+      <a id="privacy-link" href="privacy.en.html" target="_blank" rel="noopener" data-i18n="privacy">Privacy</a>
+    </div>
+    <p id="feedback" role="status" class="feedback" hidden></p>
   </main>
-  <footer>
-    <p data-i18n="free">Free · No servers of our own</p>
-    <p id="support-note" hidden data-i18n="supportNote">Optional support. Every feature remains free.</p>
-    <a id="privacy-link" href="privacy.en.html" target="_blank" rel="noopener" data-i18n="privacy">Privacy</a>
-  </footer>
 </body>
 </html>

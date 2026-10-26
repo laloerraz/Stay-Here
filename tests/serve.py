@@ -12,13 +12,15 @@ class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/preview.html':
             html = (ROOT / 'extension' / 'popup.html').read_text(encoding='utf-8')
+            html = html.replace('<head>', '<head><base href="/extension/">')
             html = html.replace('href="popup.css"', 'href="/extension/popup.css"')
             html = html.replace('<script src="popup.js" defer></script>',
                                 '<script src="/tests/preview-api.js"></script><script src="/extension/popup.js" defer></script>')
+            html = html.replace('src="i18n.js"', 'src="/extension/i18n.js"')
             html = html.replace('src="support-config.js"', 'src="/extension/support-config.js"')
             html = html.replace('src="icons/', 'src="/extension/icons/')
             html = html.replace('href="privacy.html"', 'href="/extension/privacy.html"')
-            html = html.replace('<title>Stay Here</title>', '<title>Vista previa · Stay Here</title>')
+            html = html.replace('<title>Stay Here</title>', '<title>Preview · Stay Here</title>')
             payload = html.encode('utf-8')
             self.send_response(200)
             self.send_header('Content-Type', 'text/html; charset=utf-8')

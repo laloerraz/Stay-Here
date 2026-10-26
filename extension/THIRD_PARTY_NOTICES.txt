@@ -4,3 +4,8 @@ The Ko-fi cup symbol in icons/kofi-symbol.png is an official Ko-fi brand asset. 
 Official brand guidance and source: https://more.ko-fi.com/brand-assets
 Original asset supplied by that page: https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01229bf8a18f97a3c1_favion.avif
 The bundled file was converted to PNG and resized without changing the design.
+
+Bootstrap Icons: arrow-clockwise.svg and gear-fill.svg
+Copyright (c) 2019-2026 The Bootstrap Authors. MIT license.
+Source: https://github.com/twbs/icons
+License: icons/bootstrap-icons-LICENSE.txt
